@@ -34,7 +34,7 @@ def cadastro():
 
 @server.route('/<user_id>/atividades', methods=['GET'])
 def user_atividades(user_id):
-    return jsonify(findUserAtividade(user_id)), 200
+    return findUserAtividade(user_id)
 
 @server.route('/atividade/<atv_id>', methods=['GET'])
 def get_atividade(atv_id):
@@ -59,11 +59,11 @@ def delete_atividade(atv_id):
 
 @server.route('/<user_id>/atividades/prioridade', methods=['GET'])
 def atividades_prioridade(user_id):
-    return jsonify(ordenaPrioridade(user_id)), 200
+    return ordenaPrioridade(user_id)
 
 @server.route('/<user_id>/atividades/data', methods=['GET'])
 def atividades_data(user_id):
-    return jsonify(ordenaData(user_id)), 200
+    return ordenaData(user_id)
 
     
 server.run()
